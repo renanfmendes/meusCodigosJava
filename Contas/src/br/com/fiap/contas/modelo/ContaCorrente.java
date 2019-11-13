@@ -4,14 +4,23 @@ import br.com.fiap.contas.exception.SaldoInsuficienteException;
 
 public class ContaCorrente extends Conta implements Tributavel {
 
-    public String getTipo() {
+    public ContaCorrente(String nuAgencia, int nuConta, String nomeTitular, double saldo) {
+    	super(nuAgencia, nuConta, nomeTitular, saldo);
+    }
+    
+    public ContaCorrente(){
+    	
+    }
+
+	public String getTipo() {
         return "Conta Corrente";
     }
+    
 
     @Override
     public void saca(double valor) {
         if (valor < 0) {
-            throw new IllegalArgumentException("VocÃª tentou sacar um valor negativo");
+            throw new IllegalArgumentException("Você tentou sacar um valor negativo");
         }
         if (this.saldo < valor) {
             throw new SaldoInsuficienteException(valor);

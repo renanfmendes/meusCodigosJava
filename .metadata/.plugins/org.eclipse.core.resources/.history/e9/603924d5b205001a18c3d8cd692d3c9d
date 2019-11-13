@@ -1,0 +1,19 @@
+package br.com.fiap.contas.main;
+
+import br.com.fiap.contas.modelo.Banco;
+import br.com.fiap.contas.modelo.Conta;
+import br.com.fiap.contas.modelo.ContaCorrente;
+
+public class TestaBanco {
+	public static void main(String[] args) {
+		
+		Banco banco = new Banco("RenanBank", 001);
+		
+		for (int i = 0; i < 3; i++) {
+			Conta conta = new ContaCorrente("0"+ i, i, "Cliente " + i, 0.0);
+			conta.deposita((i+1) * 100.0);
+			banco.adiciona(conta);
+		}
+		
+	}
+}

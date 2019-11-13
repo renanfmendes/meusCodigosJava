@@ -1,0 +1,8 @@
+package br.com.fiap.contas.modelo;
+
+public class Banco {
+
+	private String nome;
+	private int numero;
+	private Conta[] contas;
+}

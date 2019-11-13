@@ -1,0 +1,11 @@
+package br.com.fiap.contas.main;
+
+import br.com.fiap.contas.modelo.Banco;
+
+public class TestaBanco {
+	public static void main(String[] args) {
+		
+		Banco b1 = new Banco("RenanBank", 001);
+		
+	}
+}

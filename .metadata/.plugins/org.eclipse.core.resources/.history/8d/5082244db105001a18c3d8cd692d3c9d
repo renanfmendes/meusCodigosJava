@@ -1,0 +1,25 @@
+package br.com.fiap.contas.main;
+
+import br.com.fiap.contas.modelo.Conta;
+import br.com.fiap.contas.modelo.ContaCorrente;
+
+public class TestatArrays {
+	public static void main(String[] args) {
+		Conta[] contas = new Conta[10];
+		for (int i = 0; i < contas.length; i++) {
+			Conta conta = new ContaCorrente(String.valueOf(i), i, "Cliente" + i, 0.0);
+			conta.deposita((i+1) * 100.0);
+			contas[i] = conta;
+		}
+		
+		double mediaSaldos = 0.0;
+		
+		for (Conta conta : contas) {
+			System.out.println(conta);
+			mediaSaldos += conta.getSaldo(); 
+		}
+		
+		System.out.println(mediaSaldos / contas.length);
+	}
+
+}

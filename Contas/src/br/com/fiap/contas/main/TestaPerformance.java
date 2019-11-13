@@ -1,0 +1,40 @@
+package br.com.fiap.contas.main;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+
+public class TestaPerformance {
+	public static void main(String[] args) {
+		System.out.println("Iniciando ArrayList...");
+		Collection<Integer> teste = new ArrayList<Integer>();
+		long inicio = System.currentTimeMillis();
+		int total = 30000;
+		for (int i = 0; i < total; i++) {
+			teste.add(i);
+		}
+		for (int i = 0; i < total; i++) {
+			teste.contains(i);
+		}
+		long fim = System.currentTimeMillis();
+		long tempo = fim - inicio;
+		System.out.println("Tempo gasto: " + tempo);
+		
+		
+		System.out.println("\n\nIniciando HashSet...");
+		Collection<Integer> teste1 = new HashSet<Integer>();
+		long inicio1 = System.currentTimeMillis();
+		int total1 = 30000;
+		for (int i = 0; i < total1; i++) {
+			teste1.add(i);
+		}
+		for (int i = 0; i < total1; i++) {
+			teste1.contains(i);
+		}
+		long fim1 = System.currentTimeMillis();
+		long tempo1 = fim1 - inicio1;
+		System.out.println("Tempo gasto: " + tempo1);
+		
+		
+	}
+}
